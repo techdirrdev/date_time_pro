@@ -1,7 +1,7 @@
 name: date_time_pro
 description: Pick Date or Time functions, Date or Time convert functions.
-homepage: https://github.com/techdirrdev/date_time_pro.git
-version: 1.0.1
+repository: https://github.com/techdirrdev/date_time_pro.git
+version: 1.1.0
 
 environment:
   sdk: ">=2.16.2 <3.0.0"

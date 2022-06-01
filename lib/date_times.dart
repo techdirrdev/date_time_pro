@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+/// [DateTimes] class provide date and time picker functionality
 class DateTimes {
   static const String _am = "am";
   static const String _pm = "pm";
@@ -11,14 +12,17 @@ class DateTimes {
   static const String fhhmmpp = "hh:mm am";
   static const String fHHmm = "HH:mm";
 
+  /// get current date with format
   static String getCurrentDateTime({String format = DateTimes.fyyyyMMdd}) {
     return DateFormat(format).format(DateTime.now());
   }
 
+  /// get current time with format
   static String getCurrentTime({String format = DateTimes.fHHmmss}) {
     return DateTimes.timeToString(time: TimeOfDay.now(), format: format);
   }
 
+  /// pick date with customization
   static datePicker(
       {required BuildContext context,
       required Function(String date) dateTime,
@@ -48,6 +52,7 @@ class DateTimes {
     });
   }
 
+  /// convert date (String to DateTime)
   static DateTime stringToDateTime(
       {required String date, String format = DateTimes.fyyyyMMdd}) {
     if (DateTimes._isNullOrEmpty(date)) {
@@ -57,11 +62,13 @@ class DateTimes {
     }
   }
 
+  /// convert date (DateTime to String)
   static String dateTimeToString(
       {required DateTime date, String format = DateTimes.fyyyyMMdd}) {
     return DateFormat(format).format(date);
   }
 
+  /// check valid date range or not
   static bool validDateRange(
       {required String fromDate, required String toDate}) {
     if ((DateTimes.stringToDateTime(date: fromDate))
@@ -72,6 +79,7 @@ class DateTimes {
     }
   }
 
+  /// set valid date from valid date range
   static String setValidDate(
       {required String fromDate, required String toDate}) {
     if (DateTimes.validDateRange(fromDate: fromDate, toDate: toDate)) {
@@ -81,6 +89,7 @@ class DateTimes {
     }
   }
 
+  /// convert reverse date
   static String reverseDate(
       {required String date, String dateFormat = DateTimes.fyyyyMMdd}) {
     String reverseDate = "";
@@ -94,6 +103,7 @@ class DateTimes {
     return reverseDate;
   }
 
+  /// pick time with customization
   static timePicker(
       {required BuildContext context,
       required Function(String time) dateTime,
@@ -110,6 +120,7 @@ class DateTimes {
     });
   }
 
+  /// convert time (String to TimeOfDay)
   static TimeOfDay stringToTime({required String? time}) {
     if (DateTimes._isNullOrEmpty(time)) {
       return TimeOfDay.now();
@@ -132,6 +143,7 @@ class DateTimes {
     }
   }
 
+  /// convert time (TimeOfDay to String)
   static String timeToString(
       {required TimeOfDay time, String format = DateTimes.fHHmmss}) {
     int hour = time.hour;
@@ -157,6 +169,7 @@ class DateTimes {
     }
   }
 
+  /// set time with leading zero
   static String _timeWithLeadingZero(int value) {
     if (value.toString().length < 2) {
       return "0$value";
@@ -165,6 +178,7 @@ class DateTimes {
     }
   }
 
+  /// get time with format
   static String periodTime(
       {required String time, String format = DateTimes.fhhmmpp}) {
     if (DateTimes._isNullOrEmpty(time)) {
