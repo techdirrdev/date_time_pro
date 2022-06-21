@@ -62,6 +62,12 @@ class DateTimes {
     }
   }
 
+  /// date by period like add days or substract days
+  static String getDateByPeriod(String date, {int days = 0}) {
+    return DateTimes.dateTimeToString(
+        date: DateTimes.stringToDateTime(date: date).add(Duration(days: days)));
+  }
+
   /// convert date (DateTime to String)
   static String dateTimeToString(
       {required DateTime date, String format = DateTimes.fyyyyMMdd}) {
