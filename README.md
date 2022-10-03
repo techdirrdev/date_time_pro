@@ -40,7 +40,7 @@ Please follow this [example](https://github.com/techdirrdev/date_time_pro/tree/m
 DateTimes.datePicker(
   context: context,
   date: "1997-04-26",
-  dateTime: (date) {
+  onSelected: (date) {
     log(date);
 });
 ```
@@ -50,7 +50,7 @@ DateTimes.datePicker(
 DateTimes.timePicker(
   context: context,
   time: "12:12:00",
-  dateTime: (time) {
+  onSelected: (time) {
     log(time);
 });
 ```

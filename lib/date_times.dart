@@ -25,7 +25,7 @@ class DateTimes {
   /// pick date with customization
   static datePicker(
       {required BuildContext context,
-      required Function(String date) dateTime,
+      required Function(String date) onSelected,
       String? date,
       String? minDate,
       String? maxDate,
@@ -42,7 +42,7 @@ class DateTimes {
           ? DateTime(3000)
           : DateTimes.stringToDateTime(date: maxDate!, format: format),
     ).then((value) {
-      dateTime((value != null)
+      onSelected((value != null)
           ? DateTimes.dateTimeToString(date: value, format: format)
           : (DateTimes._isNullOrEmpty(date)
               ? ""
@@ -112,7 +112,7 @@ class DateTimes {
   /// pick time with customization
   static timePicker(
       {required BuildContext context,
-      required Function(String time) dateTime,
+      required Function(String time) onSelected,
       String? time,
       String? minTime,
       String? maxTime,
@@ -120,7 +120,7 @@ class DateTimes {
     showTimePicker(
             context: context, initialTime: DateTimes.stringToTime(time: time))
         .then((value) {
-      dateTime((value != null)
+      onSelected((value != null)
           ? DateTimes.timeToString(time: value)
           : (DateTimes._isNullOrEmpty(time) ? "" : time.toString()));
     });

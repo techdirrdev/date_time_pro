@@ -56,7 +56,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
                   DateTimes.datePicker(
                       context: context,
                       date: _selectedDate,
-                      dateTime: (date) {
+                      onSelected: (date) {
                         log(date);
                         setState(() {
                           _selectedDate = date;
@@ -77,7 +77,7 @@ class _DateTimePickerState extends State<DateTimePicker> {
                   DateTimes.timePicker(
                       context: context,
                       time: _selectedTime,
-                      dateTime: (time) {
+                      onSelected: (time) {
                         log(time);
                         setState(() {
                           _selectedTime = time;
