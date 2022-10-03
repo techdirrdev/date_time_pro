@@ -1,3 +1,7 @@
+## 1.6.0
+
+* Pick Date or Time, Convert Date or Time functions.
+
 ## 1.5.0
 
 * Pick Date or Time, Convert Date or Time functions.
