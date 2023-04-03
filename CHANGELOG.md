@@ -1,6 +1,6 @@
 ## 1.6.0
 
-* Pick Date or Time, Convert Date or Time functions.
+* package upgrade
 
 ## 1.5.0
 
